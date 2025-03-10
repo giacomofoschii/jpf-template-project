@@ -1,4 +1,4 @@
-target = pcd.ass01.simengine_conc.cli.RunTrafficSimulation
+target = lab03.cswithlocks_jpf.TestCSWithLocks
 
 classpath=build/classes/java/main
 
