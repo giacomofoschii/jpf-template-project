@@ -29,16 +29,16 @@ public class MyWorkerB extends Worker {
 	}
 	
 	protected void b1(){
-		// println("b1");
+		println("b1");
 		// wasteRandomTime(0,1000);	
 	}
 	
 	protected void b2(){
-		// println("b2");
+		println("b2");
 		// wasteRandomTime(100,200);	
 	}
 	protected void b3(){
-		// println("b3");
+		println("b3");
 		// wasteRandomTime(1000,2000);	
 	}
 }
