@@ -15,7 +15,7 @@ public class MyWorkerB extends Worker {
 		while (true){
 		  try {
 			  lock.lockInterruptibly();
-			  b1();	
+			  b1();
 			  b2();
 		  } catch (InterruptedException ex) {
 		  } finally {
@@ -26,16 +26,16 @@ public class MyWorkerB extends Worker {
 	}
 	
 	protected void b1(){
-		println("b1");
-		wasteRandomTime(0,1000);	
+		//println("b1");
+		//wasteRandomTime(0,1000);
 	}
 	
 	protected void b2(){
-		println("b2");
-		wasteRandomTime(100,200);	
+		//println("b2");
+		//wasteRandomTime(100,200);
 	}
 	protected void b3(){
-		println("b3");
-		wasteRandomTime(1000,2000);	
+		//println("b3");
+		//wasteRandomTime(1000,2000);
 	}
 }

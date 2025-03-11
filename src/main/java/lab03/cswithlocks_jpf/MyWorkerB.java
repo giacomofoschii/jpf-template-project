@@ -1,12 +1,14 @@
 package lab03.cswithlocks_jpf;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 
 public class MyWorkerB extends Worker {
 	
 	private Lock lock;
 	
-	public MyWorkerB(Lock lock){
+	public MyWorkerB(Lock lock, AtomicInteger count){
+		super(count);
 		this.lock = lock;
 	}
 
@@ -14,8 +16,10 @@ public class MyWorkerB extends Worker {
 		while (true){
 		  try {
 			  lock.lockInterruptibly();
-			  b1();	
+			  assert(this.nWorkersInCS.incrementAndGet() == 1);
+			  b1();
 			  b2();
+			  this.nWorkersInCS.decrementAndGet();
 		  } catch (InterruptedException ex) {
 		  } finally {
 			  lock.unlock();

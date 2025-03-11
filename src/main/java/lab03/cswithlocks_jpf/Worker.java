@@ -1,8 +1,12 @@
 package lab03.cswithlocks_jpf;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public abstract class Worker extends Thread {
+	protected AtomicInteger nWorkersInCS;
 		
-	public Worker(){
+	public Worker(AtomicInteger count) {
+		this.nWorkersInCS = count;
 	}
 
 	protected void print(String msg){
@@ -16,5 +20,4 @@ public abstract class Worker extends Thread {
 			System.out.println(msg);
 		}
 	}
-
 }
