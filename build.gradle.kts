@@ -25,12 +25,14 @@ tasks.getByName<Test>("test") {
     useJUnitPlatform()
 }
 
+/*
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(11))
         vendor.set(JvmVendorSpec.ADOPTIUM)
     }
 }
+*/
 
 // Utility function for verification through JPF
 
